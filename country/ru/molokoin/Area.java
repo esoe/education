@@ -11,6 +11,9 @@ public class Area {
         setPopulation(population);
         setSquare(square);
     }
+    public void print(){
+        System.out.println("name: " + name + "; population:" + population + "; square: " + square);
+    }
     
     /**
      * @param name the name to set
