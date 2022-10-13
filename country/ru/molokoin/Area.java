@@ -7,6 +7,10 @@ public class Area {
 
     Area(){}
     Area(String name, int population, int square){
+        init(name, population, square);
+    }
+
+    public void init(String name, int population, int square){
         setName(name);
         setPopulation(population);
         setSquare(square);

@@ -4,15 +4,22 @@ public class Country extends Area{
     private Area capital;
 
     Country(String name, int population, int square, String capitalName, int capitalPopulation, int capitalSquare){
-        init(name, population, square, capitalName, capitalPopulation, capitalSquare);
+        this.init(name, population, square);
+        this.capital = new Area();
+        getCapital().init(capitalName, capitalPopulation, capitalSquare);
     }
     public Country() {
     }
     public void init(String name, int population, int square, String capitalName, int capitalPopulation, int capitalSquare){
-        setCapital(capitalName, capitalPopulation, capitalSquare);
+        
+        
+        /**
+         *  setCapital(capitalName, capitalPopulation, capitalSquare);
         setName(name);
         setPopulation(population);
         setSquare(square);
+         */
+       
     }
 
     
