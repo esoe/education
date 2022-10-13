@@ -9,26 +9,35 @@ public class Area {
     Area(String name, int population, int square){
         init(name, population, square);
     }
-
     public void init(String name, int population, int square){
         setName(name);
         setPopulation(population);
         setSquare(square);
     }
     public void print(){
-        System.out.println("name: " + name + "; population:" + population + "; square: " + square);
+        if (name != "") System.out.println("name: " + name);
+        if (population > 0) System.out.println("population: " + population);
+        if (square > 0) System.out.println("square: " + square);
     }
-    
     /**
      * @param name the name to set
      */
     public void setName(String name) {
+        try {
+            if(name == "")throw new IllegalArgumentException(name);
+        } catch (IllegalArgumentException e) {
+            System.out.println("Наименвание не должно быть пустым. ");
+            e.printStackTrace();
+            this.name = name;
+        }
         this.name = name;
     }
     /**
      * @param population the population to set
      */
     public void setPopulation(int population) {
+        //население не может быть отрицательным
+        if (population < 0) throw new IllegalArgumentException("Население не может быть отрицательным ...");
         this.population = population;
     }
     /**
@@ -38,7 +47,6 @@ public class Area {
         if (square < 0) throw new IllegalArgumentException("площадь не может быть отрицательной ...");
         this.square = square;
     }
-
     /**
      * @return the name
      */
