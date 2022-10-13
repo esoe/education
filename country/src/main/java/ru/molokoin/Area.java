@@ -5,7 +5,13 @@ public class Area {
     private int population;
     private int square;
 
-    Area(){}
+    Area(){
+        //TODO сделать инициализацию полей как объектов и последующий каст в нужный тип
+        //чтобы была возможность обрабатывать null поля
+        //this(null,null,null);
+        //Area (Object name, Object population, Object square){}
+
+    }
     Area(String name, int population, int square){
         init(name, population, square);
     }

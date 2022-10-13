@@ -29,6 +29,19 @@ public class Country extends Area{
         System.out.println("-------------------------------------------");
 
     }
+    public void getDanse(){
+        //плотность населения в стране
+        //population/square
+    }
+
+    public void clearCapital(){
+        //очистка данных о столице
+        
+    }
+
+    public void updateCapital(Country[] map){
+        //обновление данных о столице
+    }
 
     /**
      * @param сapital the сapital to set
