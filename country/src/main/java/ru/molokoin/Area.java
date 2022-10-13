@@ -1,4 +1,4 @@
-package country.ru.molokoin;
+package ru.molokoin;
 
 public class Area {
     private String name;
