@@ -27,7 +27,6 @@ public class Country extends Area{
         a.print();
         country.getCapital().print();
         System.out.println("-------------------------------------------");
-
     }
     public void getDanse(){
         //плотность населения в стране

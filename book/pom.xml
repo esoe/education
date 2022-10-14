@@ -12,8 +12,8 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-	<!-- country info -->
-    <groupId>ru.molokoin.education</groupId>
+	<!-- book info -->
+    <groupId>ru.molokoin</groupId>
     <artifactId>book</artifactId>
     <version>1.0</version>
     <packaging>jar</packaging>

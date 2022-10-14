@@ -1,4 +1,4 @@
-package book.ru.molokoin;
+package ru.molokoin;
 
 public class App {
     
