@@ -9,15 +9,32 @@ public class Book {
     Book(Object name, Object year, Object publisher){}
     Book(Object name, Object author, Object year, Object publisher){
         this(name, year, publisher);
-        //TODO authorsUppend(author){не забыть создать новый массив, если его небыло}
-        String[] authors = new String[1];
-        authors[0] = (String) author;
-        setAuthors(authors);
+        setAuthors(uppendAuthors((String)author));
     }
     Book(Object name, Object[] authors, Object year, Object publisher){
         this(name, year, publisher);
         String[] a = (String[]) authors;
         setAuthors(a);
+    }
+    
+    public String[] uppendAuthors(String author){
+        String[] result;
+        try {
+            if (getAuthors() == null)throw new NullPointerException("Перечень авторов пока пуст ...");
+        } catch (NullPointerException e) {
+            e.printStackTrace();
+            result = new String[1];
+            result[0] = author;
+            return result;
+        }
+        result = new String[getAuthorsCount() + 1];
+        int i = 0;
+        while (i < getAuthorsCount()){
+            result[i] = getAuthorByIndex(i);
+            i++;
+        }
+        result[getAuthorsCount()] = author;
+        return result;
     }
     public String getAuthorByIndex(int index){
         String author = getAuthors()[index];
