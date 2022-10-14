@@ -12,10 +12,9 @@ public class Country extends Area{
         //параметры страны
         super(name, population, square);
         //параметры столицы
-        if (capitalName != null)
-        setCapital(new Area(capitalName
-        , capitalPopulation
-        , capitalSquare));
+        if (capitalName != null) setCapital(new Area(capitalName
+                , capitalPopulation
+                , capitalSquare));
         if (capitalName == null){
             setCapital(new Area(null
                 , 0
