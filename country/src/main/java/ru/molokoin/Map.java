@@ -28,7 +28,7 @@ public class Map {
         }
     }
     public static void main(String[] args) {
-        System.out.println("App.main()");
+        System.out.println("Map.main()");
         Map terra = new Map();
         terra.initDefaults();
         printAll(terra.map);

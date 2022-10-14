@@ -12,10 +12,10 @@ public class Area {
         //Area (Object name, Object population, Object square){}
 
     }
-    Area(String name, int population, int square){
+    Area(Object name, int population, int square){
         init(name, population, square);
     }
-    public void init(String name, int population, int square){
+    public void init(Object name, int population, int square){
         setName(name);
         setPopulation(population);
         setSquare(square);
@@ -28,20 +28,29 @@ public class Area {
     /**
      * @param name the name to set
      */
-    public void setName(String name) {
+    public void setName(Object name) {
+        //преобразование Object
         try {
-            if(name == "")throw new IllegalArgumentException(name);
+            if (name == null) throw new NullPointerException(getName());
+        } catch (Exception e) {
+            System.out.println("Наименвание не должно быть пустым. ");
+            e.printStackTrace();
+            this.name = "";
+        }
+        try {
+            if((String)name == "")throw new IllegalArgumentException((String)name);
         } catch (IllegalArgumentException e) {
             System.out.println("Наименвание не должно быть пустым. ");
             e.printStackTrace();
-            this.name = name;
+            this.name = "";
         }
-        this.name = name;
+        if (name != null) this.name = (String)name;
     }
     /**
      * @param population the population to set
      */
     public void setPopulation(int population) {
+
         //население не может быть отрицательным
         if (population < 0) throw new IllegalArgumentException("Население не может быть отрицательным ...");
         this.population = population;
