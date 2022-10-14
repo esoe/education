@@ -5,7 +5,20 @@ public class Book {
     private Publisher publisher;
     private int year;
     private String[] authors;
-
+    Book(){}
+    Book(Object name, Object year, Object publisher){}
+    Book(Object name, Object author, Object year, Object publisher){
+        this(name, year, publisher);
+        //TODO authorsUppend(author){не забыть создать новый массив, если его небыло}
+        String[] authors = new String[1];
+        authors[0] = (String) author;
+        setAuthors(authors);
+    }
+    Book(Object name, Object[] authors, Object year, Object publisher){
+        this(name, year, publisher);
+        String[] a = (String[]) authors;
+        setAuthors(a);
+    }
     public String getAuthorByIndex(int index){
         String author = getAuthors()[index];
         return author;
@@ -13,35 +26,34 @@ public class Book {
     //количество авторов книги
     public int getAuthorsCount(){
         //TODO проверить наличие массива - null
-        //предусмотреть, чтобы массив не содержал пустых полей
         return getAuthors().length;
     }
     /**
      * @param name the name to set
      */
     public void setName(String name) {
-        //название не должно быть пустой ссылкой;
+        //TODO название книги не должно быть пустой ссылкой;
         this.name = name;
     }
     /**
      * @param publisher the publisher to set
      */
     public void setPublisher(Publisher publisher) {
-        //издательство не должно быть пустой ссылкой;
+        //TODO издательство не должно быть пустой ссылкой;
         this.publisher = publisher;
     }
     /**
      * @param year the year to set
      */
     public void setYear(int year) {
-        //год издания должен быть строго больше нуля
+        //TODO год издания должен быть строго больше нуля
         this.year = year;
     }
     /**
      * @param author the author to set
      */
     public void setAuthors(String[] authors) {
-        //массив не должен содержать пустых ссылок
+        //TODO массив не должен содержать пустых ссылок
         this.authors = authors;
     }
     /**
