@@ -16,7 +16,7 @@ public class Book {
         String[] a = (String[]) authors;
         setAuthors(a);
     }
-    
+    //добавляем список авторов
     public String[] uppendAuthors(String author){
         String[] result;
         try {
