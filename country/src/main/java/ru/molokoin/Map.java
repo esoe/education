@@ -10,13 +10,13 @@ public class Map {
         //Финляндия
         map[1] = new Country("Finland", 5500000, 338000, "Helsinki", 655000, 0);
         //Франция
-        map[2] = new Country("France", 67800000, 643800, "Paris", 2100000, 0);
+        map[4] = new Country("France", 67800000, 643800, "Paris", 2100000, 0);
 
         //Андора
         map[3] = new Country("Andorra", 85000, 647, "Andorra la Vella", 22600, 0);
 
         //Сингапур
-        map[4] = new Country("Singapore", 5700000, 725, "", 0, 0);
+        map[2] = new Country("Singapore", 5700000, 725, null, 0, 0);
     }
     public static void printAll(Country[] map){
         System.out.println("printAll"); 

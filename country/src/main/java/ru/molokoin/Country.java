@@ -5,21 +5,22 @@ public class Country extends Area{
 
     public Country() {
     }
-    Country(String name, int population, int square){
-        //this(name, population, square, null, null, null);
-        //TODO исключить дублирование метода Area.init()
-        this.init(name, population, square);
+    Country(Object name, Object population, Object square){
+        super(name, population, square);
     }
     Country(String name, int population, int square, String capitalName, int capitalPopulation, int capitalSquare){
         //параметры страны
-        this.init(name
-        , population
-        , square);
+        super(name, population, square);
         //параметры столицы
         if (capitalName != null)
         setCapital(new Area(capitalName
         , capitalPopulation
         , capitalSquare));
+        if (capitalName == null){
+            setCapital(new Area(null
+                , 0
+                , 0));
+        }
     }
     public static void print(Country country){
         System.out.println("-------------------------------------------");

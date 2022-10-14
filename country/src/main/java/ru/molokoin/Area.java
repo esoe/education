@@ -6,16 +6,9 @@ public class Area {
     private int square;
 
     Area(){
-        //TODO сделать инициализацию полей как объектов и последующий каст в нужный тип
-        //чтобы была возможность обрабатывать null поля
-        //this(null,null,null);
-        //Area (Object name, Object population, Object square){}
-
+        this(null, null, null);
     }
-    Area(Object name, int population, int square){
-        init(name, population, square);
-    }
-    public void init(Object name, int population, int square){
+    Area(Object name, Object population, Object square){
         setName(name);
         setPopulation(population);
         setSquare(square);
@@ -33,34 +26,46 @@ public class Area {
         try {
             if (name == null) throw new NullPointerException(getName());
         } catch (Exception e) {
-            System.out.println("Наименвание не должно быть пустым. ");
             e.printStackTrace();
             this.name = "";
+        } finally{
+            if (name != null) this.name = (String)name;
         }
-        try {
-            if((String)name == "")throw new IllegalArgumentException((String)name);
-        } catch (IllegalArgumentException e) {
-            System.out.println("Наименвание не должно быть пустым. ");
-            e.printStackTrace();
-            this.name = "";
-        }
-        if (name != null) this.name = (String)name;
     }
     /**
      * @param population the population to set
      */
-    public void setPopulation(int population) {
-
-        //население не может быть отрицательным
-        if (population < 0) throw new IllegalArgumentException("Население не может быть отрицательным ...");
-        this.population = population;
+    public void setPopulation(Object population) {
+        try {
+            if (population == null) throw new NullPointerException("Параметр {население} не задан ...");
+            
+        } catch (NullPointerException e) {
+            e.printStackTrace();
+            this.population = 0;
+        } finally{
+            this.population = (Integer) population;
+        }
     }
     /**
      * @param square the square to set
      */
-    public void setSquare(int square) {
-        if (square < 0) throw new IllegalArgumentException("площадь не может быть отрицательной ...");
-        this.square = square;
+    public void setSquare(Object square) {
+        try {
+            if (square == null) throw new NullPointerException("Параметр {площадь} не задан ...");
+        } catch (NullPointerException e) {
+            System.out.println("Наименвание не установлено ...");
+            e.printStackTrace();
+            this.square = 0;
+        } finally{
+            this.square = (Integer) square;
+        }
+        try {
+            if (this.square < 0) throw new IllegalArgumentException("площадь не может быть отрицательной ...");
+        
+        } catch (IllegalArgumentException e) {
+            e.printStackTrace();
+            this.square = 0;
+        }
     }
     /**
      * @return the name
