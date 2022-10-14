@@ -8,12 +8,14 @@ public class Publisher {
      * @param name the name to set
      */
     public void setName(String name) {
+        //не должно быть пустой ссылкой
         this.name = name;
     }
     /**
      * @param sity the sity to set
      */
     public void setSity(String sity) {
+        //не должно быть пустой ссылкой
         this.sity = sity;
     }
     /**

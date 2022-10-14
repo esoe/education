@@ -20,24 +20,28 @@ public class Book {
      * @param name the name to set
      */
     public void setName(String name) {
+        //название не должно быть пустой ссылкой;
         this.name = name;
     }
     /**
      * @param publisher the publisher to set
      */
     public void setPublisher(Publisher publisher) {
+        //издательство не должно быть пустой ссылкой;
         this.publisher = publisher;
     }
     /**
      * @param year the year to set
      */
     public void setYear(int year) {
+        //год издания должен быть строго больше нуля
         this.year = year;
     }
     /**
      * @param author the author to set
      */
     public void setAuthors(String[] authors) {
+        //массив не должен содержать пустых ссылок
         this.authors = authors;
     }
     /**
