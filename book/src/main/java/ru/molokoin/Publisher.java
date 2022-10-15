@@ -11,21 +11,21 @@ public class Publisher {
         setName(name);
         setSity(sity);
     }
-    //выводим в консоль данные Издательства
-    public void print(){
-        System.out.println("Издательство: " + getName()  + " ----> " + "город: " + getSity());
-    }
     /**
      * Метод класса. Возвращает массив данных об издательствах по умолчанию
      * @return
      */
-    public static Publisher[] getDefaults(){
+    public static Publisher[] getDefaultArray(){
         Publisher[] defaultPublishers = new Publisher[4];
         defaultPublishers[0] = new Publisher("Проспект", "Москва");
         defaultPublishers[1] = new Publisher("Питер", "Санкт-Петербург");
         defaultPublishers[2] = new Publisher("БХВ", "Санкт-Петербург");
         defaultPublishers[3] = new Publisher("Диалектика", "Киев");
         return defaultPublishers;
+    }
+    //выводим в консоль данные Издательства
+    public void print(){
+        System.out.println("Издательство: " + getName()  + " ----> " + "город: " + getSity());
     }
     /**
      * @param name the name to set
@@ -67,8 +67,26 @@ public class Publisher {
     public String getSity() {
         return sity;
     }
+    public static Publisher getPublisherByName(Publisher[] publishers, String name){
+        Publisher publisher = new Publisher();
+        boolean isAcsists = false;
+        int i = 0;
+        while (i < publishers.length){
+            if (name.equals((String)publishers[i].getName())){
+                publisher = publishers[i];
+                isAcsists = true;
+            }
+            i++;
+        }
+        try {
+            if(!isAcsists) throw new Exception("Указанное наименование издательства не найдено в каталоге. Установлено наименование города по умолчанию {noname sity} ...");
+        } catch (Exception e) {
+            publisher = new Publisher(name, null);
+        }
+        return publisher;
+    }
     public static void main(String[] args) {
-        Publisher[] publishers = Publisher.getDefaults();
+        Publisher[] publishers = Publisher.getDefaultArray();
         int i = 0;
         while (i < publishers.length){
             publishers[i].print();
