@@ -19,11 +19,13 @@ public class Publisher {
         Publisher[] defaultPublishers = new Publisher[4];
         defaultPublishers[0] = new Publisher("Проспект", "Москва");
         defaultPublishers[1] = new Publisher("Питер", "Санкт-Петербург");
-        defaultPublishers[2] = new Publisher("БХВ", "Санкт-Петербург");
+        defaultPublishers[2] = new Publisher("БХВ", "Санкт-Петебург");
         defaultPublishers[3] = new Publisher("Диалектика", "Киев");
         return defaultPublishers;
     }
-    //выводим в консоль данные Издательства
+    /**
+     * выводим в консоль данные Издательства
+     */
     public void print(){
         System.out.println("Издательство: " + getName()  + " ----> " + "город: " + getSity());
     }
@@ -42,8 +44,9 @@ public class Publisher {
         }
     }
     /**
+     * Устанавливаем наименование города - где находится издательство
+     * Наименование города издания не должно быть пустой ссылкой
      * @param sity the sity to set
-     * TODO: Наименование города издания не должно быть пустой ссылкой
      */
     public void setSity(String sity) {
         String defaultSity = "noname sity";
