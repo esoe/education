@@ -15,6 +15,7 @@
 	<modules>
         <module>country</module>
         <module>book</module>
+        <module>universaty</module>
     </modules>
 
     <build>
