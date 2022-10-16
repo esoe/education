@@ -72,19 +72,59 @@ public class Person {
 
     public static Person[] initDefaults(){
         Person[] defaultList = new Person[6];
-        defaultList[0] = new Person("Ronald Turner", Gender.MALE, "Computer science", Role.TEACHER);
-        defaultList[1] = new Person("Ruth Hollings", Gender.FEMALE, "Jurisprudence", Role.TEACHER);
-        defaultList[2] = new Person("Leo Wilkinson", Gender.MALE, "Computer science", Role.STUDENT);
-        defaultList[3] = new Person("Anna Cunningham", Gender.FEMALE, "World economy", Role.STUDENT);
-        defaultList[4] = new Person("Jill Lundqvist", Gender.FEMALE, "Jurisprudence", Role.STUDENT);
-        defaultList[5] = new Person("Ronald Correa", Gender.MALE, "Computer science", Role.ASPIRANT);
+        
+        defaultList[0] = new Person("Ronald Turner", Gender.MALE, "Computer science", 
+            Role.TEACHER, Degree.PhD, "Programming paradigms");
+
+        defaultList[1] = new Person("Ruth Hollings", Gender.FEMALE, "Jurisprudence", 
+            Role.TEACHER, Degree.MSc, "Domestic arbitration");
+
+        defaultList[2] = new Person("Leo Wilkinson", Gender.MALE, "Computer science", Role.STUDENT, Stage.bachelor, "III");
+
+        defaultList[3] = new Person("Anna Cunningham", Gender.FEMALE, "World economy", Role.STUDENT, Stage.bachelor, "I");
+
+        defaultList[4] = new Person("Jill Lundqvist", Gender.FEMALE, "Jurisprudence", Role.STUDENT, Stage.master, "I");
+
+        defaultList[5] = new Person("Ronald Correa", Gender.MALE, "Computer science", Role.ASPIRANT, "Design of a functional programming language.");
+
         return defaultList;
     }
     /**
-     * Выводит общие данные о персоне в консоль
+     * Выводит общие данные в консоль
      */
     public void print(){
-        System.out.println("This is {name}. {He/she} {verb} at {department}");
+        System.out.println("This is " + getName() + " " + 
+            getGender().getPronoun() + " " +
+            getRole().getVerb() + " at " + getDepartment());
+        //преподаватели
+        if (getRole().equals(Role.TEACHER)){
+            System.out.println(getGender().getPronoun() + " has " + 
+            getDegree() + " degree in " + 
+            getSpeciality() + ".");
+            System.out.println();
+        }
+        //студенты
+        if (getRole().equals(Role.STUDENT)){
+            System.out.println(getGender().getPronoun() + " is " + 
+                getCourse() + "‘th year " + getStage() + " student.");
+            System.out.println();
+        }
+
+        //аспиранты
+        if (getRole().equals(Role.ASPIRANT)){
+            System.out.println(getGender().getPronounOwn() + " thesis title is " + getThesisTitle() + ".");
+            System.out.println();
+        }
+    }
+    /**
+     * Выводит полный набор данных в консоль
+     */
+    public static void printAll(Person[] persons){
+        int i = 0;
+        while (i < persons.length){
+            persons[i].print();
+            i++;
+        }
     }
 
     /**
@@ -119,11 +159,6 @@ public class Person {
     public void setCourse(String course) {
         this.course = course;
     }
-    
-    /**
-     * 
-     */
-
     /**
      * Возвращает имя человека,
      * TODO имя не может быть пустым полем или отсутствовать
@@ -167,11 +202,6 @@ public class Person {
         return course;
     }
     public static void main(String[] args) {
-        Person[] list = Person.initDefaults();
-        int i = 0;
-        while (i < list.length){
-            list[i].print();
-            i++;
-        }
+        Person.printAll(Person.initDefaults());
     }
 }
