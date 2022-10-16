@@ -1,5 +1,23 @@
 package ru.molokoin;
-
+/**
+ * Перечисление gender,
+ * 
+ */
 public enum Gender {
-    MALE, FEMALE
+    MALE {
+        public String getPronoun(){
+            return "he";
+        }
+    },
+    FEMALE{
+        public String getPronoun(){
+            return "she";
+        }
+    },
+    TRANS{
+        public String getPronoun() {
+            return "it";
+        }
+    };
+    public abstract String getPronoun();
 }
