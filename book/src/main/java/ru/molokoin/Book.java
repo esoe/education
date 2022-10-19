@@ -98,7 +98,7 @@ public class Book {
                 throw new NullPointerException("в случае, если массив authors еще не создан и писать нового автора некуда, создаем пустой массив, пишем в него данные нового автора ...");
             } catch (NullPointerException e) {
                 //e.printStackTrace();
-                System.out.println(e);
+                System.out.println(e.getMessage());
                 result = new String[1];
                 result[0] = author;
                 setAuthors(result);
