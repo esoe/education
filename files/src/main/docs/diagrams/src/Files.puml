@@ -1,0 +1,15 @@
+@startuml Files
+title Files class diagram
+class File {
+    String name
+    byte size
+}
+enum Format{
+    DOCUMENT
+    IMAGE
+    AUDIO
+    VIDEO
+    OTHER
+}
+
+@enduml
