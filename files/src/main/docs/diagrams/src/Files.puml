@@ -1,15 +1,21 @@
 @startuml Files
 title Files class diagram
-class File {
-    String name
-    byte size
+class Storage {
+    Extension extension
+    String readAnnotation()
+    void main
 }
-enum Format{
+enum Extension{
     DOCUMENT
     IMAGE
     AUDIO
     VIDEO
     OTHER
+}
+annotation File {
+    String name()
+    byte size()
+    Extension extension ()
 }
 
 @enduml
