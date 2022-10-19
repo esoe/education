@@ -21,6 +21,7 @@
         <module>country</module>
         <module>book</module>
         <module>universaty</module>
+        <module>practice</module>
     </modules>
 
     <build>

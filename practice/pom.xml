@@ -12,9 +12,9 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-	<!-- universaty info -->
+	<!-- practice info -->
     <groupId>ru.molokoin.education</groupId>
-    <artifactId>universaty</artifactId>
+    <artifactId>practice</artifactId>
     <version>1.0</version>
     <packaging>jar</packaging>
     <properties>
