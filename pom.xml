@@ -10,6 +10,11 @@
     <artifactId>education</artifactId>
     <packaging>pom</packaging>
 	<version>1.0</version>
+    <properties>
+    <maven.compiler.source>11</maven.compiler.source>
+    <maven.compiler.target>11</maven.compiler.target>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
 
 	<!-- sub modules -->
 	<modules>
