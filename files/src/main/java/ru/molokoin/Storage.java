@@ -2,6 +2,7 @@ package ru.molokoin;
 //import annotations
 @File (name="noname", size=0, extension=Extension.OTHER)
 public class Storage {
+    private File file;
     //Extension extension;
     public Storage(){
         

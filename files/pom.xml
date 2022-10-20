@@ -17,5 +17,27 @@
     <artifactId>files</artifactId>
     <version>1.0</version>
     <packaging>jar</packaging>
+
+    <dependency>
+        <groupId>org.projectlombok</groupId>
+        <artifactId>lombok</artifactId>
+        <version>1.18.12</version>
+        <scope>provided</scope>
+    </dependency>
+
+    <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.5.1</version>
+        <configuration>
+            <annotationProcessorPaths>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>1.18.12</version>
+            </annotationProcessorPaths>
+        </configuration>
+    </plugin>
+
+
 	
 </project>
