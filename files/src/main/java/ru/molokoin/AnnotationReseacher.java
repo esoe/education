@@ -20,8 +20,7 @@ public class AnnotationReseacher {
         System.out.println(file.size());
     }
     public static void main(String[] args) {
-        Storage storage = new Storage();
-        print(storage);
+        
         
     }
 }
