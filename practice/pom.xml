@@ -13,7 +13,7 @@
     <modelVersion>4.0.0</modelVersion>
 
 	<!-- practice info -->
-    <groupId>ru.molokoin.education</groupId>
+    <groupId>ru.molokoin</groupId>
     <artifactId>practice</artifactId>
     <version>1.0</version>
     <packaging>jar</packaging>

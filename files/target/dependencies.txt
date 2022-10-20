@@ -1,0 +1,2 @@
+digraph "ru.molokoin:files:jar:1.0" { 
+ } 

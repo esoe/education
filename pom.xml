@@ -22,6 +22,7 @@
         <module>book</module>
         <module>universaty</module>
         <module>practice</module>
+        <module>files</module>
     </modules>
 
     <build>

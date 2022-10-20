@@ -1,3 +1,5 @@
+package ru.molokoin;
+
 @Inherited
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
