@@ -1,5 +1,8 @@
 package ru.molokoin;
 
+
+
+
 import java.lang.annotation.Annotation;
 
 public class AnnotationReseacher {
