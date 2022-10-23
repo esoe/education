@@ -2,7 +2,7 @@ package ru.molokoin;
 
 /**
  * Класс - обертка
- * предоставляет инструментарий обращения с отдельным файлом
+ * 
  */
 public class File {
     private String name;

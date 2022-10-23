@@ -1,8 +1,8 @@
 package ru.molokoin;
 
 public class Dimensions {
-    int width;
-    int height;
+    private int width;
+    private int height;
     Dimensions(int width, int height){
         setWidth(width);
         setHeight(height);
