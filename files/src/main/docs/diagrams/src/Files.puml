@@ -1,9 +1,8 @@
 @startuml Files
+
 title Files class diagram
 class Storage {
-    Extension extension
-    String readAnnotation()
-    void main
+    File[] files
 }
 enum Extension{
     DOCUMENT
@@ -12,10 +11,10 @@ enum Extension{
     VIDEO
     OTHER
 }
-annotation File {
-    String name()
-    byte size()
-    Extension extension ()
+class File {
+    String name
+    byte size
+    Extension extension
 }
 
 @enduml
