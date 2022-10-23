@@ -1,9 +1,6 @@
 @startuml Files
-
 title Files class diagram
-class Storage {
-    File[] files
-}
+
 enum Extension{
     DOCUMENT
     IMAGE
@@ -15,6 +12,31 @@ class File {
     String name
     byte size
     Extension extension
+}
+class Document{
+    String format
+    int lists
+}
+class Image{
+
+}
+class Audio{
+
+}
+class Video{
+
+}
+
+Extension -> File
+File -> Document
+File -> Image
+File -> Audio
+File -> Video
+
+class Storage {
+    File[] files
+    File[] getDefaultList()
+    void print()
 }
 
 @enduml

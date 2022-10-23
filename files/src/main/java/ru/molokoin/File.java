@@ -1,16 +1,40 @@
 package ru.molokoin;
 
+/**
+ * Класс - обертка
+ * предоставляет инструментарий обращения с отдельным файлом
+ */
 public class File {
-    String name;
-    Byte size;
-    Extension extension;
-
-    public File (String name, Byte size, Extension extension){
-
+    private String name;
+    private byte size;
+    private Extension extension;
+    public File(String name, byte size, Extension extension){
+        setName(name);
+        setSize(size);
+        setExtension(extension);
+    }
+    public void print(){
+        System.out.println("name: " + getName());
+        System.out.println("size: " + (byte) getSize());
+        System.out.println("extension: " + extension);
     }
 
-    public static void main(String[] args) {
-        //
+    public void setName(String name) {
+        this.name = name;
     }
-
+    public void setSize(byte size) {
+        this.size = size;
+    }
+    public void setExtension(Extension extension) {
+        this.extension = extension;
+    }
+    public String getName() {
+        return name;
+    }
+    public byte getSize() {
+        return size;
+    }
+    public Extension getExtension() {
+        return extension;
+    }
 }
