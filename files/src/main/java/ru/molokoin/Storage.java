@@ -5,6 +5,7 @@ import java.util.Arrays;
 /**
  * Класс - хранилище информации обо всех файлах
  * предоставляет инструментарий обращения с массивом файлов
+ * TODO формат вывода преобразовать в табличный вид
  */
 public class Storage {
     private File[] files;
@@ -25,6 +26,10 @@ public class Storage {
             i++;
         }
     }
+    /**
+     * Метод, добавляющий файл в хранилище/storage
+     * @param file
+     */
     public void add(File file) {
         if(getFiles() == null){
             File[] result = new File[1];
@@ -39,10 +44,18 @@ public class Storage {
     }
     public static void main(String[] args) {
         Storage storage = new Storage();
-        storage.add(new Document("myDocument", (byte)10, Extension.DOCUMENT, "txt", 5));
-        storage.add(new Image("myImage", (byte)15, Extension.IMAGE, "jpg", new Dimensions(12, 8)));
+        //Заполняем массив исходными данными
+        storage.add(new Document("myDocument", 10, Extension.DOCUMENT, "txt", 5));
+        storage.add(new Image("myImage", 15, Extension.IMAGE, "jpg", new Dimensions(12, 8)));
+        storage.add(new Audio("myAudio", 50, Extension.AUDIO, "mp3", "some melody", new Duration(20000)));
+        storage.add(new Video("myVideo"
+                , 100500
+                , Extension.VIDEO
+                , "mpeg"
+                , "some video content"
+                , new Duration(100500)
+                , new Dimensions(1024, 768)));
         storage.print();
-
     }
 
 }

@@ -1,19 +1,22 @@
 package ru.molokoin;
 
+/**
+ * Класс, хранящий метаданные о изображении/image
+ */
 public class Image extends File{
     private String format;
     private Dimensions dimensions;
 
-    public Image(String name, byte size, Extension extension, String format, Dimensions dimensions) {
+    public Image(String name, int size, Extension extension, String format, Dimensions dimensions) {
         super(name, size, extension);
         init(format, dimensions);
     }
+    @Override
     public void print(){
+        System.out.println("--------------------------------------------");
         super.print();
         System.out.println("format: " + getFormat());
         System.out.println("Dimensions: " + getDimensions().getHeight() + " x " + getDimensions().getWidth());
-        System.out.println("--------------------------------------------");
-        
     }
     public void init(String format, Dimensions dimensions){
         setFormat(format);

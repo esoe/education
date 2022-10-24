@@ -1,19 +1,11 @@
 package ru.molokoin;
 
+/**
+ * Класс, хранящий метаданные о документе/document
+ */
 public class Document extends File{
     private String format;
     private int lists;
-
-    /**
-     * Базовый конструктор класса File
-     * @param name
-     * @param size
-     * @param extension
-     */
-    public Document(String name, byte size, Extension extension) {
-        super(name, size, extension);
-        //TODO Auto-generated constructor stub
-    }
 
     /**
      * Основной конструктор документа
@@ -23,27 +15,18 @@ public class Document extends File{
      * @param format
      * @param lists
      */
-    public Document(String name, byte size, Extension extension,String format, int lists) {
+    public Document(String name, int size, Extension extension,String format, int lists) {
         super(name, size, extension);
-        init(format, lists);
-    }
-
-    /**
-     * Инициируем атрибуты документа:
-     * формат и количество страниц.
-     * @param format
-     * @param lists
-     */
-    public void init(String format, int lists){
         setFormat(format);
         setLists(lists);
     }
+
+    @Override
     public void print(){
+        System.out.println("--------------------------------------------");
         super.print();
         System.out.println("format: " + getFormat());
         System.out.println("lists: " + getLists());
-        System.out.println("--------------------------------------------");
-        
     }
     public void setFormat(String format) {
         this.format = format;
